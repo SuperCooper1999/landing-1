@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'inter';
+    src: url(Inter/inter.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'monst';
+    src: url(Montserrat/monsterrat.ttf) format("truetype");
+    font-weight: normal;
+    font-style:normal;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 0px black;
+    }
+
+    to {
+        text-shadow: 0 0 2.5px rgb(255, 255, 255);
+        scale:1.005;
+    }
+}
+
+@keyframes glow-2 {
+    from {
+        text-shadow: 0 0 0px black;
+    }
+
+    to {
+        text-shadow: 0 0 5px rgb(255, 255, 255);
+        scale:1.1;
+    }
+}
+
+@keyframes zoomin {
+  from {
+    rotate: 0deg;
+    scale: 1;
+  }
+  to {
+    rotate: 360deg;
+    scale: 1.25;
+  }
+}
+
+html, body{
+    margin:0px;
+    padding:0px;
+    margin-top:8px;
+}
+
+:root {
+    --text: rgb(255,255,255);
+}
+
+body {
+    background-color: #0b0b0c;
+}
+
+a, h1, h2, h3, h4, h5, h6, li, p {
+    font-family:'monst', 'inter';
+    color:white;
+    text-decoration:none;
+}
+
+.header-1 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:10px;
+    width:100%;
+    border-bottom:1px solid whitesmoke;
+    padding-bottom:18px;
+}
+
+.icon-paragraph {
+    display: flex;
+    justify-self:flex-start;
+    align-items: center;
+    position:absolute;
+    left:25px;
+}
+
+.icon-paragraph img:hover {
+    animation: zoomin 0.5s forwards ease-in-out;
+}
+
+.icon-paragraph h6 {
+    margin-left:5px;
+}
+
+.header1-nav1 {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.header1-nav2 {
+    position: absolute;
+    right: 30px;
+}
+
+.header1-nav1 a {
+    font-size:20px;
+}
+
+.header1-nav1 a:hover {
+    animation: glow .5s forwards;
+}
+
+.header1-nav2 a{
+    background-color:whitesmoke;
+    color:black;
+    height:24px;
+    padding:2px;
+    border-radius:2px;
+}
+
+.distribution-info {
+    position: relative; /* Делает этот блок "якорем" для текста */
+    width: 100%;
+    height: 400px;
+    display: flex;       /* Включаем flex, чтобы легко отцентровать текст */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;    /* Чтобы картинка не вылезала за края, если она больше */
+}
+
+.distribution-info img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Важно! Сохраняет пропорции фото, не давая ему сплющиться */
+    position: absolute;  /* Картинка уходит на нижний слой */
+    top: 0;
+    left: 0;
+    z-index: 1;          /* Самый нижний слой */
+}
+
+.distribution-info h3 {
+    position: relative;  /* Поднимает текст над картинкой */
+    z-index: 2;          /* Слой выше, чем у картинки */
+    color: white;        /* Чтобы текст было видно на фото */
+    font-size: 40px;
+    text-shadow: 0 0 10px rgb(0, 0, 0); /* Добавим тень для читаемости */
+}
+
+.ar-1 {
+    padding-top:25px;
+    display: flex;
+    justify-self: center;
+    flex-flow: column wrap;
+    align-items:center;
+    width:100%;
+}
+
+.ar-1 ul {
+    display: flex;
+    justify-content: left;
+    align-self: flex-start;
+    flex-flow: column wrap;
+}
+
+.ar-1 ul p {
+    padding-left:20px;
+    margin-top:2.5px;
+    color: rgb(78, 78, 78);
+}
+
+.ar-1 img:hover {
+    animation: glow-2 .25s forwards;
+}
