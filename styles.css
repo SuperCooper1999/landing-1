@@ -41,6 +41,16 @@
     }
 }
 
+@keyframes glow-3 {
+    from {
+        scale:1;
+    }
+
+    to {
+        scale:1.005;
+    }
+}
+
 @keyframes zoomin {
   from {
     rotate: 0deg;
@@ -56,7 +66,14 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 html, body{
+    height:100%;
+    width:100%;
     margin:0px;
     padding:0px;
     margin-top:8px;
@@ -127,7 +144,7 @@ a, h1, h2, h3, h4, h5, h6, li, p, td {
     color:black;
     height:24px;
     padding:2px;
-    border-radius:2px;
+    border-radius:4px;
 }
 
 .distribution-info {
@@ -167,6 +184,10 @@ a, h1, h2, h3, h4, h5, h6, li, p, td {
     width:100%;
 }
 
+.ar-div-glow:hover {
+    animation: glow-3 .5s forwards;
+}
+
 .ar-1 ul {
     display: flex;
     justify-content: left;
@@ -192,33 +213,54 @@ a, h1, h2, h3, h4, h5, h6, li, p, td {
 }
 
 .jcenter-acenter {
-    margin-top:100px;
+    margin-top:80px;
     display: flex;
     justify-self: center;
     align-items:center;
 }
 
 .jcenter-acenter-2 {
-    width:400px;
     border-collapse:collapse;
-    display: flex;
-    justify-content:center;
-    justify-self:center;
-    align-items:center;
+    scale:1.5;
     text-align:center;
-    background-color: #ffffff;
-    border-radius:5px;
-}
-
-.jcenter-acenter-2 tr {
-    border-bottom: 1px solid black;
+    display: flex;
+    justify-self:center;
+    padding-top:30px;
 }
 
 .jcenter-acenter-2 td {
-    color:black;
-    border-right:1px solid black;
-    max-width: 100px;
-    width:100px;
-    font-family:'sat';
-    text-shadow: 0 0 1px #111;
+    border-right:1px solid rgb(48, 48, 48);
+    width:125px;
+    font-family: 'monst';
+    font-style:italic;
+}
+
+.first-table-line-bordertop-1 {
+    border-top:1px solid rgb(48, 48, 48);
+}
+
+.last-table-line-borderbottom-1 {
+    border-bottom:1px solid rgb(48, 48, 48);    
+}
+
+.jcenter-acenter-2 td:first-child {
+    border-bottom:1px solid rgb(48, 48, 48);
+    border-left:1px solid rgb(48, 48, 48);
+}
+
+.jcenter-acenter-2 tr {
+    height:40px;
+}
+
+.jcenter-acenter-3 {
+    margin-bottom:90px;
+    text-align:center;
+    width:600px;
+    display: flex;
+    justify-self:center;
+    align-self:center;
+}
+
+.send-ticker-form-fillout {
+    display: flex;
 }
