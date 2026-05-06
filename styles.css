@@ -12,6 +12,13 @@
     font-style:normal;
 }
 
+@font-face {
+    font-family: 'sat';
+    src: url(sat.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 @keyframes glow {
     from {
         text-shadow: 0 0 0px black;
@@ -45,6 +52,10 @@
   }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body{
     margin:0px;
     padding:0px;
@@ -59,7 +70,7 @@ body {
     background-color: #0b0b0c;
 }
 
-a, h1, h2, h3, h4, h5, h6, li, p {
+a, h1, h2, h3, h4, h5, h6, li, p, td {
     font-family:'monst', 'inter';
     color:white;
     text-decoration:none;
@@ -120,31 +131,31 @@ a, h1, h2, h3, h4, h5, h6, li, p {
 }
 
 .distribution-info {
-    position: relative; /* Делает этот блок "якорем" для текста */
+    position: relative;
     width: 100%;
     height: 400px;
-    display: flex;       /* Включаем flex, чтобы легко отцентровать текст */
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;    /* Чтобы картинка не вылезала за края, если она больше */
+    overflow: hidden;
 }
 
 .distribution-info img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* Важно! Сохраняет пропорции фото, не давая ему сплющиться */
-    position: absolute;  /* Картинка уходит на нижний слой */
+    object-fit: cover;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;          /* Самый нижний слой */
+    z-index: 1;
 }
 
 .distribution-info h3 {
-    position: relative;  /* Поднимает текст над картинкой */
-    z-index: 2;          /* Слой выше, чем у картинки */
-    color: white;        /* Чтобы текст было видно на фото */
+    position: relative;
+    z-index: 2;
+    color: white;
     font-size: 40px;
-    text-shadow: 0 0 10px rgb(0, 0, 0); /* Добавим тень для читаемости */
+    text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 .ar-1 {
@@ -171,4 +182,43 @@ a, h1, h2, h3, h4, h5, h6, li, p {
 
 .ar-1 img:hover {
     animation: glow-2 .25s forwards;
+}
+
+.plans-dist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column wrap;
+}
+
+.jcenter-acenter {
+    margin-top:100px;
+    display: flex;
+    justify-self: center;
+    align-items:center;
+}
+
+.jcenter-acenter-2 {
+    width:400px;
+    border-collapse:collapse;
+    display: flex;
+    justify-content:center;
+    justify-self:center;
+    align-items:center;
+    text-align:center;
+    background-color: #ffffff;
+    border-radius:5px;
+}
+
+.jcenter-acenter-2 tr {
+    border-bottom: 1px solid black;
+}
+
+.jcenter-acenter-2 td {
+    color:black;
+    border-right:1px solid black;
+    max-width: 100px;
+    width:100px;
+    font-family:'sat';
+    text-shadow: 0 0 1px #111;
 }
